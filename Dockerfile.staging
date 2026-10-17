@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && npm install --global pnpm@10.33.4
 WORKDIR /workspace
 ENV NEXT_TELEMETRY_DISABLED=1 PUPPETEER_SKIP_DOWNLOAD=1 NODE_OPTIONS=--max-old-space-size=8192
-COPY . .
+COPY --chown=node:node . .
 RUN pnpm install --frozen-lockfile
 ARG NEXT_PUBLIC_APP_URL=https://ff.staging.rafael.media
 ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
