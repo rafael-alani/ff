@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
+  name: "Form & Field",
+  url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:4000",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
     "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
   links: {
     twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    github: "https://github.com/rafael-alani/ff",
   },
   navItems: [
     {

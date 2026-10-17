@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { useAdvancedFrame } from "@/components/form-field/provider"
 import { CMD_K_FORWARD_TYPE } from "@/app/(app)/(create)/components/action-menu"
 import { CreateDevtools } from "@/app/(app)/(create)/components/create-devtools"
 import {
@@ -40,6 +41,7 @@ export function Preview() {
   const [params] = useDesignSystemSearchParams()
   const override = usePreviewOverrideValue()
   const iframeRef = React.useRef<HTMLIFrameElement>(null)
+  useAdvancedFrame(iframeRef, params.base + params.item)
   const lastSentParamsRef = React.useRef<typeof params | null>(null)
 
   // Hover previews overlay the committed params without touching the URL —

@@ -33,6 +33,9 @@ export function V0Button({ className }: { className?: string }) {
       : "New Project"
   }, [params.base, params.style])
 
+  if (!process.env.NEXT_PUBLIC_APP_URL || !process.env.NEXT_PUBLIC_V0_URL)
+    return null
+
   if (!isMounted) {
     return <Skeleton className="h-8 w-24 rounded-lg" />
   }

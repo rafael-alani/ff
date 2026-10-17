@@ -45,7 +45,12 @@
     "test:dev": "turbo run test --force",
     "test": "pnpm --filter=v4 registry:build && start-server-and-test v4:dev http://localhost:4000 test:dev",
     "validate:registries": "pnpm --filter=v4 validate:registries",
-    "test:apps": "pnpm --filter=v4 test:apps"
+    "test:apps": "pnpm --filter=v4 test:apps",
+    "ff:dev": "pnpm --filter=v4 exec next dev --hostname 127.0.0.1 --port 4000",
+    "ff:check": "pnpm --filter=v4 typecheck",
+    "ff:test": "vitest run --config vitest.config.ts apps/v4/lib/form-field",
+    "ff:build": "pnpm --filter=v4 build",
+    "ff:registry": "pnpm --filter=v4 registry:build"
   },
   "packageManager": "pnpm@10.33.4",
   "dependencies": {

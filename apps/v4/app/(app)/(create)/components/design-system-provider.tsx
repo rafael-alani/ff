@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { AdvancedPreviewStyles } from "@/components/form-field/preview-styles"
 import {
   buildRegistryTheme,
   DEFAULT_CONFIG,
@@ -319,5 +320,10 @@ export function DesignSystemProvider({
     return null
   }
 
-  return <>{children}</>
+  return (
+    <>
+      <AdvancedPreviewStyles />
+      {children}
+    </>
+  )
 }

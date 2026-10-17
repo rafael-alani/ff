@@ -19,11 +19,11 @@ const WelcomeDialog = dynamic(() =>
 )
 
 export const metadata: Metadata = {
-  title: "New Project",
+  title: "Studio",
   description:
     "Customize everything. Pick your component library, icons, base color, theme, fonts and create your own version of shadcn/ui.",
   openGraph: {
-    title: "New Project",
+    title: "Studio",
     description:
       "Customize everything. Pick your component library, icons, base color, theme, fonts and create your own version of shadcn/ui.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "New Project",
+    title: "Studio",
     description:
       "Customize everything. Pick your component library, icons, base color, theme, fonts and create your own version of shadcn/ui.",
     images: [siteConfig.ogImage],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function CreatePage() {
   return (
-    <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-hidden section-soft [--customizer-width:--spacing(48)] [--gap:--spacing(4)] md:[--gap:--spacing(6)] 2xl:[--customizer-width:--spacing(56)]">
+    <div className="relative z-10 flex min-h-0 flex-1 flex-col overflow-hidden section-soft [--customizer-width:--spacing(64)] [--gap:--spacing(4)] md:[--gap:--spacing(6)] 2xl:[--customizer-width:--spacing(68)]">
       <div
         data-slot="designer"
         className="flex min-h-0 flex-1 flex-col gap-(--gap) p-(--gap) pt-[calc(var(--gap)*0.25)] md:flex-row-reverse"

@@ -1,0 +1,16 @@
+/* Your hand-written component treatments belong here.
+   Target shadcn data-slot attributes, not generated class strings.
+   This file is never replaced by the upstream updater or studio Save.
+
+   Example:
+   [data-slot="button"][data-variant="default"] {
+     text-transform: uppercase;
+     letter-spacing: 0.04em;
+   }
+*/
+
+/* Keep content measurable when the studio changes fonts, density, or canvas width.
+   The outer Radix content still owns the open/close animation. */
+[data-slot="accordion-content"] > div {
+  height: auto;
+}

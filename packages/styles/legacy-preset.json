@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "style": "nova",
+  "baseColor": "neutral",
+  "theme": "neutral",
+  "chartColor": "orange",
+  "font": "geist",
+  "fontHeading": "inherit",
+  "iconLibrary": "lucide",
+  "radius": "default",
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "mode": "light",
+  "advanced": {
+    "density": 1,
+    "fontSize": 16,
+    "lineHeight": 1.5,
+    "letterSpacing": 0,
+    "borderWidth": 1,
+    "shadow": 1,
+    "motion": 1,
+    "iconSize": 0,
+    "iconStroke": 0,
+    "focusRing": 0,
+    "buttonHeight": 0,
+    "inputHeight": 0,
+    "cardPadding": 0
+  },
+  "tokens": {
+    "light": {},
+    "dark": {}
+  }
+}

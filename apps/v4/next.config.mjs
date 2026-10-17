@@ -54,6 +54,14 @@ const nextConfig = {
   },
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*", "./styles/**/*"],
+    "/api/form-field/export": [
+      "../../LICENSE.md",
+      "../../form-field.upstream.json",
+      "../../packages/styles/src/*",
+      "./package.json",
+      "./registry/**/*",
+      "./public/**/*",
+    ],
   },
   images: {
     remotePatterns: [

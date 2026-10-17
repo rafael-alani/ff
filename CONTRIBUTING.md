@@ -1,5 +1,22 @@
 # Contributing
 
+## Form & Field fork
+
+For changes to this fork, start with [AGENTS.md](AGENTS.md), the
+[documentation map](docs/README.md), and [Development](docs/DEVELOPMENT.md).
+That guide owns the pinned toolchain, generated-source workflow, and Form &
+Field validation scope. Use [UPSTREAM.md](docs/UPSTREAM.md) when merging upstream;
+keep `origin` pointed at the fork and preserve upstream history.
+
+Before review, inspect the diff for unrelated or generated changes and include
+the affected user workflow, commands actually run, and any untested browser or
+consumer combinations. Submit fork changes to the fork; the release commands
+in [RELEASING.md](RELEASING.md) belong to upstream packages and do not publish a
+Form & Field package. The remaining sections preserve upstream contribution
+guidance; their structural examples are not the complete fork inventory.
+
+## Upstream contribution guide
+
 Thanks for your interest in contributing to ui.shadcn.com. We're happy to have you here.
 
 Please take a moment to review this document before submitting your first pull request. We also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.

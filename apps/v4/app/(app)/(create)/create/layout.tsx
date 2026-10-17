@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 
+import { FormFieldProvider } from "@/components/form-field/provider"
 import { CreateSkeleton } from "@/app/(app)/(create)/components/create-skeleton"
 import { HistoryProvider } from "@/app/(app)/(create)/hooks/use-history"
 import { LocksProvider } from "@/app/(app)/(create)/hooks/use-locks"
@@ -15,7 +16,9 @@ export default function CreateLayout({
           of prerendering up to this boundary. The fallback is what paints on
           first load, so it must be the page placeholder, not empty. */}
       <Suspense fallback={<CreateSkeleton />}>
-        <HistoryProvider>{children}</HistoryProvider>
+        <HistoryProvider>
+          <FormFieldProvider>{children}</FormFieldProvider>
+        </HistoryProvider>
       </Suspense>
     </LocksProvider>
   )

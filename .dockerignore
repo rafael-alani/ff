@@ -1,0 +1,14 @@
+.git
+**/node_modules
+**/.next
+**/.turbo
+**/.cache
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+.migration
+.studio
+.codex-artifacts
+.playwright*
+**/tsconfig.tsbuildinfo

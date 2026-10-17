@@ -5,6 +5,9 @@ import dynamic from "next/dynamic"
 import { type RegistryItem } from "shadcn/schema"
 
 import { useIsMobile } from "@/hooks/use-mobile"
+import { FormFieldActions } from "@/components/form-field/actions"
+import { AdvancedPanel } from "@/components/form-field/advanced-panel"
+import { useFormField } from "@/components/form-field/provider"
 import { getThemesForBaseColor, STYLES } from "@/registry/config"
 import { Button } from "@/styles/base-nova/ui/button"
 import {
@@ -14,6 +17,12 @@ import {
   CardHeader,
 } from "@/styles/base-nova/ui/card"
 import { FieldGroup, FieldSeparator } from "@/styles/base-nova/ui/field"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/styles/base-nova/ui/tabs"
 import { MenuAccentPicker } from "@/app/(app)/(create)/components/accent-picker"
 import { ActionMenu } from "@/app/(app)/(create)/components/action-menu"
 import { BaseColorPicker } from "@/app/(app)/(create)/components/base-color-picker"
@@ -57,6 +66,7 @@ export function Customizer({
   itemsByBase: Record<string, Pick<RegistryItem, "name" | "title" | "type">[]>
 }) {
   const [params] = useDesignSystemSearchParams()
+  const { advanced, setAdvanced } = useFormField()
   const isMobile = useIsMobile()
   const anchorRef = React.useRef<HTMLDivElement | null>(null)
 
@@ -67,53 +77,70 @@ export function Customizer({
 
   return (
     <Card
-      className="dark top-24 right-12 isolate z-10 max-h-full min-h-0 w-full self-start rounded-2xl bg-card/90 backdrop-blur-xl md:w-(--customizer-width)"
+      className="dark top-24 right-12 isolate z-10 max-h-[70dvh] min-h-0 w-full shrink-0 self-start rounded-2xl bg-card/90 backdrop-blur-xl md:max-h-full md:w-(--customizer-width)"
       ref={anchorRef}
       size="sm"
     >
       <CardHeader className="hidden items-center justify-between gap-2 border-b group-data-reversed/layout:flex-row-reverse md:flex">
-        <MainMenu />
+        <span className="text-sm font-semibold tracking-tight whitespace-nowrap">
+          Form &amp; Field
+        </span>
+        <MainMenu className="w-auto shrink-0" />
       </CardHeader>
-      <CardContent className="no-scrollbar min-h-0 flex-1 overflow-x-auto overflow-y-hidden md:overflow-y-auto">
-        <FieldGroup className="flex-row gap-2.5 py-px **:data-[slot=field-separator]:-mx-4 **:data-[slot=field-separator]:w-auto md:flex-col md:gap-3.25">
-          <StylePicker
-            styles={STYLES}
-            isMobile={isMobile}
-            anchorRef={anchorRef}
-          />
-          <FieldSeparator className="hidden md:block" />
-          <BaseColorPicker isMobile={isMobile} anchorRef={anchorRef} />
-          <ThemePicker
-            themes={availableThemes}
-            isMobile={isMobile}
-            anchorRef={anchorRef}
-          />
-          <ChartColorPicker isMobile={isMobile} anchorRef={anchorRef} />
-          <FieldSeparator className="hidden md:block" />
-          <FontPicker
-            label="Heading"
-            param="fontHeading"
-            fonts={FONT_HEADING_OPTIONS}
-            isMobile={isMobile}
-            anchorRef={anchorRef}
-          />
-          <FontPicker
-            label="Font"
-            param="font"
-            fonts={FONTS}
-            isMobile={isMobile}
-            anchorRef={anchorRef}
-          />
-          <FieldSeparator className="hidden md:block" />
-          <IconLibraryPicker isMobile={isMobile} anchorRef={anchorRef} />
-          <RadiusPicker isMobile={isMobile} anchorRef={anchorRef} />
-          <FieldSeparator className="hidden md:block" />
-          <MenuColorPicker isMobile={isMobile} anchorRef={anchorRef} />
-          <MenuAccentPicker isMobile={isMobile} anchorRef={anchorRef} />
-          {isMobile && <BasePicker isMobile={isMobile} anchorRef={anchorRef} />}
-        </FieldGroup>
-      </CardContent>
-      <CardFooter className="flex min-w-0 gap-2 md:flex-col md:rounded-b-none md:**:[button,a]:w-full">
+      <Tabs
+        defaultValue="essentials"
+        className="min-h-0 flex-1 gap-3 overflow-hidden"
+      >
+        <TabsList aria-label="Customization" className="mx-4 w-auto shrink-0">
+          <TabsTrigger value="essentials">Essentials</TabsTrigger>
+          <TabsTrigger value="advanced">Advanced</TabsTrigger>
+        </TabsList>
+        <CardContent className="no-scrollbar min-h-0 overflow-x-auto overflow-y-auto overscroll-contain">
+          <TabsContent value="essentials">
+            <FieldGroup className="flex-row gap-2.5 py-px **:data-[slot=field-separator]:-mx-4 **:data-[slot=field-separator]:w-auto md:flex-col md:gap-3.25">
+              <StylePicker
+                styles={STYLES}
+                isMobile={isMobile}
+                anchorRef={anchorRef}
+              />
+              <FieldSeparator className="hidden md:block" />
+              <BaseColorPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <ThemePicker
+                themes={availableThemes}
+                isMobile={isMobile}
+                anchorRef={anchorRef}
+              />
+              <ChartColorPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <FieldSeparator className="hidden md:block" />
+              <FontPicker
+                label="Heading"
+                param="fontHeading"
+                fonts={FONT_HEADING_OPTIONS}
+                isMobile={isMobile}
+                anchorRef={anchorRef}
+              />
+              <FontPicker
+                label="Font"
+                param="font"
+                fonts={FONTS}
+                isMobile={isMobile}
+                anchorRef={anchorRef}
+              />
+              <FieldSeparator className="hidden md:block" />
+              <IconLibraryPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <RadiusPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <FieldSeparator className="hidden md:block" />
+              <MenuColorPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <MenuAccentPicker isMobile={isMobile} anchorRef={anchorRef} />
+              <BasePicker isMobile={isMobile} anchorRef={anchorRef} />
+            </FieldGroup>
+          </TabsContent>
+          <TabsContent value="advanced">
+            <AdvancedPanel value={advanced} onChange={setAdvanced} />
+          </TabsContent>
+        </CardContent>
+      </Tabs>
+      <CardFooter className="flex min-w-0 shrink-0 gap-2 md:flex-col md:rounded-b-none md:**:[button,a]:w-full">
         <CopyPreset className="min-w-0 flex-1 md:flex-none" />
         <OpenPreset
           className="max-w-20 min-w-0 flex-1 sm:max-w-none md:flex-none"
@@ -123,8 +150,9 @@ export function Customizer({
         <ActionMenu itemsByBase={itemsByBase} />
         <ResetDialog />
       </CardFooter>
-      <CardFooter className="-mt-3 hidden min-w-0 gap-2 md:flex md:flex-col md:**:[button,a]:w-full">
+      <CardFooter className="-mt-3 flex min-h-0 min-w-0 shrink-0 flex-col gap-2 **:[button,a]:w-full">
         <ProjectForm />
+        <FormFieldActions />
       </CardFooter>
     </Card>
   )

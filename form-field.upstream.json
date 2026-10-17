@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "fork": {
+    "repository": "https://github.com/rafael-alani/ff",
+    "remote": "origin",
+    "url": "https://github.com/rafael-alani/ff.git"
+  },
+  "upstream": {
+    "repository": "https://github.com/shadcn-ui/ui",
+    "remote": "upstream",
+    "url": "https://github.com/shadcn-ui/ui.git"
+  },
+  "migrationBaseline": {
+    "date": "2026-10-04",
+    "commit": "295a1f114a138f23b5dfee0e0c6812394dfeb90c",
+    "subject": "feat(registry): add ten community registries (#12105)",
+    "historyCommitCount": 2476,
+    "history": "full"
+  },
+  "acceptedUpstreamCommit": "295a1f114a138f23b5dfee0e0c6812394dfeb90c",
+  "website": "apps/v4",
+  "packageManager": "pnpm@10.33.4",
+  "legacy": {
+    "archive": ".migration/legacy-source-2026-10-04.tar.gz",
+    "sha256": "a5b7b3499c250b5ce8ae2bb46b893b6e2de1117fda9bddf5df611f3580d0b1d2",
+    "retainedDirectory": ".migration/legacy",
+    "hadGitHistory": false
+  },
+  "formFieldOwnedPaths": [
+    "apps/v4/components/form-field",
+    "apps/v4/lib/form-field",
+    "apps/v4/app/api/form-field",
+    "packages/styles",
+    "docs",
+    "FORM_FIELD.md",
+    "AGENTS.md"
+  ],
+  "validationStatus": "verified-with-documented-limits",
+  "maintenanceGuide": "docs/UPSTREAM.md"
+}

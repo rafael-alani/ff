@@ -56,3 +56,7 @@ __screenshots__
 
 CONTEXT.md
 docs/adr
+
+# Form & Field local recovery and saved-style backups
+.migration/
+.studio/

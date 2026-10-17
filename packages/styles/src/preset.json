@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "essentials": {
+    "base": "base",
+    "style": "nova",
+    "iconLibrary": "lucide",
+    "baseColor": "neutral",
+    "theme": "neutral",
+    "chartColor": "neutral",
+    "font": "inter",
+    "fontHeading": "inherit",
+    "item": "preview-02",
+    "rtl": false,
+    "pointer": false,
+    "menuAccent": "subtle",
+    "menuColor": "default",
+    "radius": "default",
+    "template": "next"
+  },
+  "advanced": {
+    "version": 2,
+    "bodySize": null,
+    "bodyWeight": null,
+    "bodyLeading": null,
+    "bodyTracking": null,
+    "headingSize": null,
+    "headingWeight": null,
+    "headingLeading": null,
+    "headingTracking": null,
+    "labelSize": null,
+    "labelWeight": null,
+    "labelLeading": null,
+    "labelTracking": null,
+    "controlHeight": null,
+    "controlPadding": null,
+    "containerPadding": null,
+    "rowSpacing": null,
+    "controlRadius": null,
+    "cardRadius": null,
+    "overlayRadius": null,
+    "fieldBorder": null,
+    "cardElevation": null,
+    "overlayElevation": null,
+    "tokens": {
+      "light": {},
+      "dark": {}
+    }
+  }
+}

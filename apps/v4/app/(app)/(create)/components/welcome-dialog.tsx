@@ -14,7 +14,7 @@ import {
   DialogTitle,
 } from "@/styles/base-nova/ui/dialog"
 
-const STORAGE_KEY = "shadcn-create-welcome-dialog"
+const STORAGE_KEY = "form-field-create-welcome-dialog"
 
 export function WelcomeDialog() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -47,14 +47,15 @@ export function WelcomeDialog() {
         </div>
         <DialogHeader className="gap-1 p-4">
           <DialogTitle className="text-left text-base">
-            Build your own shadcn/ui
+            Make it your own with Form & Field
           </DialogTitle>
           <DialogDescription className="text-left leading-relaxed text-foreground">
             Customize everything from the ground up. Pick your component
             library, font, color scheme, and more.
           </DialogDescription>
           <DialogDescription className="mt-2 text-left leading-relaxed font-medium text-foreground">
-            Available for all major React frameworks.
+            Official shadcn/ui Essentials, with an Advanced tab for deeper
+            customization.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="m-0">
