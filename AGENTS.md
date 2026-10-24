@@ -30,3 +30,31 @@ Search for old values and affected summaries, including the
 or resolved gaps, and keep routine check results in the task response or PR.
 Internal refactors with no documented effect need no doc edit. Routine upkeep
 is part of completing implementation, without a separate documentation pass.
+
+## Worktree completion and cleanup
+
+The canonical local checkout is `/Users/rafael/Repos/ff`. Keep the retained
+staging/review version in that original folder; temporary sibling worktrees are
+for active isolated work. A completed task must not leave the original folder
+on an older version while its delivered work survives only in a task folder.
+
+Before consolidation, inspect the live deployed commit, configured review branch,
+remote refs, all worktrees/clones, and local changes. Preserve dirty, untracked,
+unpushed and needed ignored files in a verified named recovery snapshot or branch.
+Record its ref and restore instructions; retain secrets outside Git. Check local
+commands, scheduled jobs and previews for references to a worktree before moving
+or removing it, and update and verify those references at the canonical path.
+
+Publish completed changes to their intended integration/review branch after the
+required checks. Verify the remote revision and bring the original checkout to
+the retained revision, including follow-up documentation. Pending staging
+acceptance keeps the candidate on its review branch. Folder cleanup alone does
+not authorize promotion to `main`, deployment, or discarding other work.
+
+Once files, refs and consumers are verified, remove the task's inactive duplicate
+checkout through its owning lifecycle: Codex archive for managed worktrees,
+`git worktree remove` for ordinary linked worktrees. Remove merged local task
+branches only after proving their changes are retained remotely. Preserve active
+chat/job/preview worktrees and required recovery artifacts. If ownership, access,
+local work or review blocks cleanup, report each exact path and reason; never
+silently accumulate completed task folders.
